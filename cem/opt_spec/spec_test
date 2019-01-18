@@ -1,0 +1,11 @@
+OptSpec
+
+ProblemType: 
+..Unconstrained
+
+Objectives:
+..effpos..rho..1
+..effori..rho..1
+
+InitialGuess:
+..[0,0,0,0,0,0]..

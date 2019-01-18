@@ -82,9 +82,9 @@ function r = mdl_jaco()
  
     
     % place the variables into the global workspace
-    if nargin == 1
+    if nargout == 1
         r = robot;
-    elseif nargin == 0
+    elseif nargout == 0
         assignin('caller', 'jaco', robot);
         assignin('caller', 'qz', [0 0 0 0 0 0]); % zero angles
         assignin('caller', 'qr', [270 180 180 0 0 0]*deg); % vertical pose as per Fig 2
