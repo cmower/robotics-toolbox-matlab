@@ -10,6 +10,6 @@ end
 function cost = objective_function(x, robot, T)
 
 q = x(:)';
-cost = obj_effpos(robot, q, T) + obj_effori(robot, q, T) + obj_gersh(robot, q);
+cost = obj_effpos(robot, q, T) + obj_effori(robot, q, T) + obj_mineig(robot, q);
 
 end

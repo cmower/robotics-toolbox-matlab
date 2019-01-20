@@ -186,3 +186,30 @@ for i = 1:n
     pause;
 end
 end
+
+%% Time comparison obj_mineig vs obj_maniplty
+
+robot = mdl_jaco;
+NTRIALS = 1000;
+time_results = zeros(NTRIALS, 2);
+for i = 1:NTRIALS
+    
+    q = robot.randq();
+    
+    t0=tic;
+    obj_mineig(robot, q);
+    dur = toc(t0);
+    
+    time_results(i, 1) = dur;
+    
+    t0=tic;
+    obj_maniplty(robot, q);
+    dur = toc(t0);
+    
+    time_results(i, 2) = dur;
+    
+    fprintf('%d/%d complete\n', i, NTRIALS)
+    
+end
+
+mean(time_results)
